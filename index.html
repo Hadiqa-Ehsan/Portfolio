@@ -1,256 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hadiqa Ehsan | AI Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hadiqa Ehsan | Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:#020617;color:#e2e8f0;scroll-behavior:smooth}
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f172a;
-      color: #e2e8f0;
-    }
+nav{position:fixed;width:100%;top:0;display:flex;justify-content:space-between;padding:20px 60px;background:rgba(2,6,23,0.8);backdrop-filter:blur(10px);z-index:1000}
+nav h1{color:#38bdf8}
+nav a{color:#e2e8f0;margin-left:20px;text-decoration:none;position:relative}
+nav a::after{content:"";position:absolute;width:0;height:2px;background:#38bdf8;left:0;bottom:-5px;transition:.3s}
+nav a:hover::after{width:100%}
 
-    /* NAVBAR */
-    nav {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:20px 60px;
-      background: transparent;
-      position:fixed;
-      width:100%;
-      top:0;
-      z-index:1000;
-    }
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;animation:fadeIn 1.5s ease}
+.hero h2{font-size:50px}
+.hero span{color:#38bdf8}
+.hero p{margin:20px 0;color:#94a3b8}
 
-    nav h1 {
-      color:#38bdf8;
-      font-size:22px;
-    }
+.typing{margin-top:10px}
 
-    nav a {
-      margin-left:25px;
-      text-decoration:none;
-      color:#e2e8f0;
-      transition:0.3s;
-    }
+section{padding:80px 60px;max-width:1200px;margin:auto;opacity:0;transform:translateY(40px);transition:all .8s ease}
+section.show{opacity:1;transform:translateY(0)}
 
-    nav a:hover {
-      color:#38bdf8;
-    }
+h3{color:#38bdf8;margin-bottom:20px}
 
-    /* HERO */
-    .hero {
-      height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      background: linear-gradient(to right, #0f172a, #020617);
-      padding:0 20px;
-    }
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
 
-    .hero h2 {
-      font-size:48px;
-      margin-bottom:10px;
-    }
+.card{background:#1e293b;padding:20px;border-radius:15px;transition:.4s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;width:100%;height:100%;background:linear-gradient(120deg,transparent,#38bdf8,transparent);top:-100%;left:0;transition:.5s}
+.card:hover::before{top:100%}
+.card:hover{transform:translateY(-10px) scale(1.02);box-shadow:0 15px 30px rgba(0,0,0,0.4)}
 
-    .hero span {
-      color:#38bdf8;
-    }
+.btn{display:inline-block;margin-top:10px;padding:10px 20px;background:#38bdf8;color:#020617;border-radius:20px;text-decoration:none;transition:.3s}
+.btn:hover{background:#0ea5e9;transform:scale(1.05)}
 
-    .hero p {
-      font-size:18px;
-      margin:20px 0;
-      color:#94a3b8;
-    }
+.stats{text-align:center}
+.stats img{margin:10px;transition:.3s}
+.stats img:hover{transform:scale(1.05)}
 
-    .btn {
-      display:inline-block;
-      padding:12px 25px;
-      background:#38bdf8;
-      color:#0f172a;
-      border-radius:30px;
-      text-decoration:none;
-      font-weight:600;
-      transition:0.3s;
-    }
+footer{text-align:center;padding:20px;background:#020617;color:#94a3b8}
 
-    .btn:hover {
-      background:#0ea5e9;
-    }
-
-    section {
-      padding:80px 60px;
-      max-width:1100px;
-      margin:auto;
-    }
-
-    h3 {
-      font-size:28px;
-      margin-bottom:20px;
-      color:#38bdf8;
-    }
-
-    .cards {
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-      gap:20px;
-    }
-
-    .card {
-      background:#1e293b;
-      padding:20px;
-      border-radius:15px;
-      transition:0.3s;
-    }
-
-    .card:hover {
-      transform:translateY(-8px);
-      box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .card h4 {
-      margin-bottom:10px;
-      color:#e2e8f0;
-    }
-
-    .card p {
-      color:#94a3b8;
-      font-size:14px;
-    }
-
-    footer {
-      text-align:center;
-      padding:20px;
-      background:#020617;
-      margin-top:40px;
-      color:#94a3b8;
-    }
-
-    @media(max-width:768px){
-      nav { padding:20px; }
-      section { padding:60px 20px; }
-      .hero h2 { font-size:32px; }
-    }
-
-  </style>
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+</style>
 </head>
+
 <body>
 
-<!-- NAVBAR -->
 <nav>
-  <h1>Hadiqa</h1>
-  <div>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+<h1>Hadiqa</h1>
+<div>
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#services">Services</a>
+<a href="#projects">Projects</a>
+</div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div>
-    <h2>Hi, I'm <span>Hadiqa Ehsan</span></h2>
-    <p>AI Engineer | Full-Stack Developer | Building intelligent real-world solutions</p>
-    <a href="#projects" class="btn">View My Work</a>
-  </div>
+<h2>Hi, I'm <span>Hadiqa Ehsan</span></h2>
+<p>AI Engineer | Full-Stack Developer</p>
+<img class="typing" src="https://readme-typing-svg.herokuapp.com?lines=AI+Enthusiast;MERN+Stack+Developer;Machine+Learning+Engineer;Building+Smart+Applications&center=true&width=500&height=40">
 </div>
 
-<!-- ABOUT -->
 <section id="about">
-  <h3>About Me</h3>
-  <p>I am a BSCS student passionate about Artificial Intelligence and Full-Stack Development. I specialize in building machine learning models and modern MERN applications that solve real-world problems.</p>
+<h3>About Me</h3>
+<p>Passionate AI & Full-Stack Developer, BSCS student building ML systems and modern MERN applications.</p>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
-  <h3>Skills</h3>
-  <div class="cards">
-    <div class="card">
-      <h4>Web Development</h4>
-      <p>MERN Stack, Responsive Design, APIs</p>
-    </div>
-
-    <div class="card">
-      <h4>Artificial Intelligence</h4>
-      <p>Machine Learning, Deep Learning, TensorFlow</p>
-    </div>
-
-    <div class="card">
-      <h4>Data Science</h4>
-      <p>Pandas, NumPy, Data Analysis</p>
-    </div>
-
-    <div class="card">
-      <h4>UI/UX</h4>
-      <p>Clean, modern and user-friendly designs</p>
-    </div>
-  </div>
+<h3>Tech Stack</h3>
+<div class="card">
+<img src="https://skillicons.dev/icons?i=python,js,react,nodejs,mongodb,php,cs,pytorch,git">
+</div>
 </section>
 
-<!-- PROJECTS -->
+<section id="services">
+<h3>Services</h3>
+<div class="grid">
+<div class="card"><h4>Web Development</h4><p>MERN apps, APIs, responsive UI</p></div>
+<div class="card"><h4>AI Development</h4><p>ML models & intelligent systems</p></div>
+<div class="card"><h4>Data Science</h4><p>Analysis & visualization</p></div>
+<div class="card"><h4>UI/UX</h4><p>Modern clean interfaces</p></div>
+</div>
+</section>
+
 <section id="projects">
-  <h3>Featured Projects</h3>
-  <div class="cards">
-
-    <div class="card">
-      <h4>🌱 AI Plant Disease Detector</h4>
-      <p>Deep learning-based Android app using TensorFlow Lite for real-time plant disease detection.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/AI_Plant_Disease_Detector" target="_blank" class="btn">View Code</a>
-    </div>
-
-    <div class="card">
-      <h4>🏠 PropTrack (MERN)</h4>
-      <p>Full-stack real estate platform with dashboards, authentication, and property listings.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/PropTrack-MERN" target="_blank" class="btn">View Code</a>
-    </div>
-
-    <div class="card">
-      <h4>📊 Data Analysis Suite</h4>
-      <p>Includes Sales, Student & Employee Performance Analyzers using Python & Pandas.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/Sales_Data_Analyzer" target="_blank" class="btn">View Code</a>
-    </div>
-
-    <div class="card">
-      <h4>🤖 Python Projects Collection</h4>
-      <p>Collection of mini Python apps including games, calculators, and utilities.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/python-projects" target="_blank" class="btn">View Code</a>
-    </div>
-
-    <div class="card">
-      <h4>💰 Budget Tracker</h4>
-      <p>Simple financial tracking application for managing expenses and savings.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/Budget_Tracker" target="_blank" class="btn">View Code</a>
-    </div>
-
-    <div class="card">
-      <h4>🐾 Virtual Pet System</h4>
-      <p>C# based interactive virtual pet simulation with modular architecture.</p>
-      <a href="https://github.com/Hadiqa-Ehsan/VirtualPetSystem" target="_blank" class="btn">View Code</a>
-    </div>
-
-  </div>
+<h3>Projects</h3>
+<div class="grid">
+<div class="card"><h4>AI Plant Disease Detector</h4><a href="https://github.com/Hadiqa-Ehsan/AI_Plant_Disease_Detector" class="btn">GitHub</a></div>
+<div class="card"><h4>PropTrack MERN</h4><a href="https://github.com/Hadiqa-Ehsan/PropTrack-MERN" class="btn">GitHub</a></div>
+<div class="card"><h4>Python Projects</h4><a href="https://github.com/Hadiqa-Ehsan/python-projects" class="btn">GitHub</a></div>
+<div class="card"><h4>Budget Tracker</h4><a href="https://github.com/Hadiqa-Ehsan/Budget_Tracker" class="btn">GitHub</a></div>
+</div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h3>Contact</h3>
-  <p>Email: your-email@example.com</p>
-  <p>GitHub: github.com/Hadiqa-Ehsan</p>
+<section class="stats">
+<h3>GitHub Stats</h3>
+<img src="https://github-readme-stats.vercel.app/api?username=Hadiqa-Ehsan&show_icons=true&theme=tokyonight">
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=Hadiqa-Ehsan&theme=tokyonight">
+<br>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hadiqa-Ehsan&layout=compact&theme=tokyonight">
+</section>
+
+<section>
+<h3>Contact</h3>
+<p>Email: hadiqaehsan4@gmail.com</p>
+<p><a href="https://github.com/Hadiqa-Ehsan">GitHub Profile</a></p>
 </section>
 
 <footer>
-  <p>© 2026 Hadiqa Ehsan — All Rights Reserved</p>
+<p>© 2026 Hadiqa Ehsan</p>
 </footer>
+
+<script>
+// Scroll animation
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
