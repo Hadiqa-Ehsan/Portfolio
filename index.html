@@ -25,9 +25,7 @@ nav{
 nav h1{color:#38bdf8}
 nav a{color:#e2e8f0;margin-left:20px;text-decoration:none}
 
-.hero{
- height:100vh;display:flex;align-items:center;justify-content:center;
-}
+.hero{height:100vh;display:flex;align-items:center;justify-content:center}
 
 .profile-card{
  background:#0f172a;padding:40px;border-radius:20px;text-align:center;
@@ -46,7 +44,16 @@ nav a{color:#e2e8f0;margin-left:20px;text-decoration:none}
 }
 
 section{padding:100px 60px;max-width:1300px;margin:auto}
-h3{color:#38bdf8;margin-bottom:25px;font-size:28px}
+
+.box{
+ background:#0f172a;
+ padding:40px;
+ border-radius:20px;
+ box-shadow:0 0 30px rgba(0,0,0,0.4);
+ margin-bottom:40px;
+}
+
+h3{color:#38bdf8;margin-bottom:20px;font-size:26px}
 
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
 
@@ -63,18 +70,16 @@ h3{color:#38bdf8;margin-bottom:25px;font-size:28px}
  background:#38bdf8;color:#020617;border-radius:20px;text-decoration:none
 }
 
-.timeline{
- border-left:3px solid #38bdf8;padding-left:20px
-}
+.skills-bars .bar{margin:20px 0}
+.skills-bars span{display:block;margin-bottom:6px}
+.progress{height:10px;background:#1e293b;border-radius:10px;overflow:hidden}
+.progress div{height:100%;background:#38bdf8}
+
+.timeline{border-left:3px solid #38bdf8;padding-left:20px}
 .timeline div{margin-bottom:20px}
 
-.skills-bars .bar{margin:15px 0}
-.skills-bars span{display:block;margin-bottom:5px}
-.progress{
- height:8px;background:#1e293b;border-radius:10px;overflow:hidden
-}
-.progress div{
- height:100%;background:#38bdf8
+.contact-links a{
+ display:block;margin:10px 0;color:#38bdf8;text-decoration:none
 }
 
 .stats{text-align:center}
@@ -89,10 +94,10 @@ footer{text-align:center;padding:20px;color:#94a3b8}
 <nav>
 <h1>Hadiqa</h1>
 <div>
-<a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
@@ -109,53 +114,71 @@ footer{text-align:center;padding:20px;color:#94a3b8}
 </div>
 
 <section id="about">
+<div class="box">
 <h3>About Me</h3>
-<p>I am a passionate BSCS student focusing on Artificial Intelligence and Full Stack Development. I build ML systems, modern web apps, and real-world scalable solutions.</p>
+<p>I am a BSCS student passionate about Artificial Intelligence, Full Stack Development, and building impactful real-world applications.</p>
+<p>I have worked on multiple AI systems, MERN projects, and data analysis tools. My focus is on creating scalable, intelligent and user-friendly solutions.</p>
+</div>
 </section>
 
 <section id="skills">
+<div class="box">
 <h3>Skills</h3>
 <div class="skills-bars">
 <div class="bar"><span>JavaScript</span><div class="progress"><div style="width:85%"></div></div></div>
 <div class="bar"><span>Python</span><div class="progress"><div style="width:90%"></div></div></div>
 <div class="bar"><span>React</span><div class="progress"><div style="width:80%"></div></div></div>
+<div class="bar"><span>Node.js</span><div class="progress"><div style="width:75%"></div></div></div>
 <div class="bar"><span>Machine Learning</span><div class="progress"><div style="width:85%"></div></div></div>
+<div class="bar"><span>MongoDB</span><div class="progress"><div style="width:80%"></div></div></div>
+</div>
 </div>
 </section>
 
 <section>
-<h3>Experience / Journey</h3>
+<div class="box">
+<h3>Journey</h3>
 <div class="timeline">
-<div><b>2026</b> - Building AI + MERN Projects</div>
-<div><b>2025</b> - Started Full Stack Development</div>
-<div><b>2024</b> - Began Programming Journey</div>
+<div><b>2026</b> - Building advanced AI & MERN applications</div>
+<div><b>2025</b> - Developed full stack projects</div>
+<div><b>2024</b> - Started programming & fundamentals</div>
+</div>
 </div>
 </section>
 
 <section id="projects">
+<div class="box">
 <h3>Projects</h3>
 <div class="grid">
-<div class="card"><h4>AI Plant Disease Detector</h4><p>Deep learning app for plant disease detection.</p><a href="https://github.com/Hadiqa-Ehsan/AI_Plant_Disease_Detector" class="btn">GitHub</a></div>
-<div class="card"><h4>PropTrack MERN</h4><p>Full real estate platform with dashboards.</p><a href="https://github.com/Hadiqa-Ehsan/PropTrack-MERN" class="btn">GitHub</a></div>
-<div class="card"><h4>Virtual Pet System</h4><p>C# simulation project.</p><a href="https://github.com/Hadiqa-Ehsan/VirtualPetSystem" class="btn">GitHub</a></div>
-<div class="card"><h4>Budget Tracker</h4><p>Expense tracking app.</p><a href="https://github.com/Hadiqa-Ehsan/Budget_Tracker" class="btn">GitHub</a></div>
-<div class="card"><h4>Python Projects</h4><p>Mini apps collection.</p><a href="https://github.com/Hadiqa-Ehsan/python-projects" class="btn">GitHub</a></div>
-<div class="card"><h4>Data Analysis</h4><p>Performance analyzers.</p><a href="https://github.com/Hadiqa-Ehsan/Sales_Data_Analyzer" class="btn">GitHub</a></div>
+<div class="card"><h4>AI Plant Disease Detector</h4><p>Deep learning app detecting plant diseases.</p><a href="https://github.com/Hadiqa-Ehsan/AI_Plant_Disease_Detector" class="btn">GitHub</a></div>
+<div class="card"><h4>PropTrack MERN</h4><p>Real estate platform with dashboards.</p><a href="https://github.com/Hadiqa-Ehsan/PropTrack-MERN" class="btn">GitHub</a></div>
+<div class="card"><h4>Virtual Pet System</h4><p>C# based simulation project.</p><a href="https://github.com/Hadiqa-Ehsan/VirtualPetSystem" class="btn">GitHub</a></div>
+<div class="card"><h4>Budget Tracker</h4><p>Finance tracking system.</p><a href="https://github.com/Hadiqa-Ehsan/Budget_Tracker" class="btn">GitHub</a></div>
+<div class="card"><h4>Python Projects</h4><p>Collection of mini apps and games.</p><a href="https://github.com/Hadiqa-Ehsan/python-projects" class="btn">GitHub</a></div>
+<div class="card"><h4>Data Analysis</h4><p>Performance analysis projects.</p><a href="https://github.com/Hadiqa-Ehsan/Sales_Data_Analyzer" class="btn">GitHub</a></div>
+</div>
 </div>
 </section>
 
 <section class="stats">
+<div class="box">
 <h3>GitHub Stats</h3>
 <img src="https://github-readme-stats.vercel.app/api?username=Hadiqa-Ehsan&show_icons=true&theme=tokyonight">
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Hadiqa-Ehsan&theme=tokyonight">
 <br>
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hadiqa-Ehsan&layout=compact&theme=tokyonight">
+</div>
 </section>
 
-<section>
+<section id="contact">
+<div class="box">
 <h3>Contact</h3>
-<p>Email: hadiqaehsan4@gmail.com</p>
-<p><a href="https://github.com/Hadiqa-Ehsan">GitHub Profile</a></p>
+<div class="contact-links">
+<a href="mailto:hadiqaehsan4@gmail.com">📧 Email</a>
+<a href="https://github.com/Hadiqa-Ehsan">💻 GitHub</a>
+<a href="https://www.linkedin.com/">🔗 LinkedIn</a>
+</div>
+</div>
 </section>
 
 <footer>
